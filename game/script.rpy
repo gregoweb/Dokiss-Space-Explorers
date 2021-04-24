@@ -14,7 +14,8 @@ $sp=10
 $spMax=10
 
 # display the story the first at begining if =1 and ask player name
-$firstLoop=1
+$firstLoop=0
+$name = "Cloud"
 
 $travel=0
 $planeteName= "Dokiss"
@@ -31,28 +32,15 @@ while sp > 0:
     #scene bgPlanete
     scene mars2
 
-    #yalign min 0.45 max 1
-    #
-    #layeredimage paysage:
-    #    always "mars2"
-    #    group elem auto:
-    #        pos (renpy.random.randint(0,640), renpy.random.randint(0,360))
-    #        attribute mountain default
-    
-    #scene paysage
-
-    $varX=renpy.random.randint(0,128)*10
-    $varY=renpy.random.randint(28,72)*10
-
-    #$i=renpy.random.randint(0,10)
-    $i=10
-    while i > 0:
-        show mountain:
-            xpos renpy.random.randint(0,128)*10
-            ypos renpy.random.randint(28,72)*10
-            xsize renpy.random.randint(0,100)
-            ysize renpy.random.randint(0,100)
-        $i -= 1
+    show mountains-mars:
+        xpos renpy.random.randint(-128,128)*10
+        #ypos renpy.random.randint(28,72)*10
+        # ypos min320 max370
+        ypos renpy.random.randint(32,37)*10
+        xsize 1280
+        ysize 290
+        #xsize 2560
+        #ysize 580
 
 
     #show cockpit
