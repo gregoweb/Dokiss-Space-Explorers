@@ -1,34 +1,40 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 31, in script
-    scene bgPlanete
-Exception: In DynamicImage u'[rndPlaneteType].png': Could not find substitution 'rndPlaneteType'.
+Compiling ATL code at game/script.rpy:47
+  File "game/script.rpy", line 45, in script
+    show mountain:
+Exception: Expression u'"[varX]"' is not an ATL transform, and so cannot be included in an ATL interpolation.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 31, in script
-    scene bgPlanete
-  File "renpy/ast.py", line 1282, in execute
+  File "game/script.rpy", line 45, in script
+    show mountain:
+  File "renpy/ast.py", line 1191, in execute
     show_imspec(self.imspec, atl=getattr(self, "atl", None))
   File "renpy/ast.py", line 1161, in show_imspec
     atl=atl)
   File "renpy/exports.py", line 753, in show
     sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=default_transform, transient=transient)
-  File "renpy/display/core.py", line 1103, in add
-    thing.set_transform_event("show")
-  File "renpy/display/transform.py", line 752, in set_transform_event
-    self.child.set_transform_event(event)
-  File "renpy/display/image.py", line 489, in set_transform_event
-    return self.target.set_transform_event(event)
-  File "renpy/display/image.py", line 718, in set_transform_event
-    self.find_target()
-  File "renpy/display/image.py", line 638, in find_target
-    raise Exception("In DynamicImage %r: Could not find substitution '%s'." % (self.name, str(ke.args[0])))
-Exception: In DynamicImage u'[rndPlaneteType].png': Could not find substitution 'rndPlaneteType'.
+  File "renpy/display/core.py", line 1104, in add
+    thing._show()
+  File "renpy/display/transform.py", line 1123, in _show
+    super(ATLTransform, self)._show()
+  File "renpy/display/transform.py", line 1092, in _show
+    self.update_state()
+  File "renpy/display/transform.py", line 1111, in update_state
+    fr = self.execute(self, self.st, self.at)
+  File "renpy/atl.py", line 589, in execute
+    block = self.compile()
+  File "renpy/atl.py", line 557, in compile
+    block = self.atl.compile(self.context)
+  File "renpy/atl.py", line 752, in compile
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "renpy/atl.py", line 1020, in compile
+    raise Exception("Expression %r is not an ATL transform, and so cannot be included in an ATL interpolation." % expr)
+Exception: Expression u'"[varX]"' is not an ATL transform, and so cannot be included in an ATL interpolation.
 
-Windows-10-10.0.19041
+Windows-7-6.1.7601-SP1
 Ren'Py 7.4.4.1439
 Dokiss Space Explorers 1.0
-Sat Apr 24 07:55:20 2021
+Sat Apr 24 11:07:20 2021

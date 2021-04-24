@@ -6,6 +6,12 @@
 - Background 128x72 resize 1280x720
 - Palette  
 
+-- elements
+-montagne
+show mountain
+xalign 0.75
+yalign 1.0
+
 ## Story
 **done**
 

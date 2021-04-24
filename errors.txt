@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 30: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation.
-    while sp > 0:
+File "game/script.rpy", line 51: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
+    xpos renpy.random.randint(0,128)*10
     ^
 
 Ren'Py Version: Ren'Py 7.4.4.1439
-Sat Apr 24 07:54:16 2021
+Sat Apr 24 12:08:23 2021

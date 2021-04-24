@@ -28,8 +28,34 @@ $phoneme= ['zu','zo','dor','bi','ko','zan','mi','mo','do','ri','po','pi','ka','c
 $phonemeMax=17
 
 while sp > 0:
-    scene bgPlanete
-    show cockpit
+    #scene bgPlanete
+    scene mars2
+
+    #yalign min 0.45 max 1
+    #
+    #layeredimage paysage:
+    #    always "mars2"
+    #    group elem auto:
+    #        pos (renpy.random.randint(0,640), renpy.random.randint(0,360))
+    #        attribute mountain default
+    
+    #scene paysage
+
+    $varX=renpy.random.randint(0,128)*10
+    $varY=renpy.random.randint(28,72)*10
+
+    #$i=renpy.random.randint(0,10)
+    $i=10
+    while i > 0:
+        show mountain:
+            xpos renpy.random.randint(0,128)*10
+            ypos renpy.random.randint(28,72)*10
+            xsize renpy.random.randint(0,100)
+            ysize renpy.random.randint(0,100)
+        $i -= 1
+
+
+    #show cockpit
     if firstLoop==1:
         $firstLoop = 0
         c "Congratulation for participating in the Dokiss Space Explorer's programm."
